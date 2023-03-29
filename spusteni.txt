@@ -1,0 +1,4 @@
+Spustit:
+1. Vytvořit nové virtuální prostředí venv
+2. Nainstalovat závislosti pomocí souboru: requirements.txt
+<pip install -r requirements.txt>

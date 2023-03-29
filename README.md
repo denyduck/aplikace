@@ -1,10 +1,14 @@
 # Evidence pojištění
-Pro spuštění vytvořit nové virtuální prostředí: venv
+Pro spuštění vytvořit nové virtuální prostředí s nazvem:
+
+venv
+
 Importovat závislosti ze seznamu:
 
-requirements.txt 
+requirements.txt
 
 pomocí 
+
 
 <pip install -r requirements.txt>
 

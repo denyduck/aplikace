@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+
+      <!--levy kontejner-->
+      <div class="col-md-15 mt-3">
+        <div class="card">
+          <div class="card-header text-center">
+            <h4>Seznam klientů</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Jméno</th>
+                  <th>Příjmení</th>
+                  <th>e-mail</th>
+                  <th>Telefoní číslo</th>
+                  <th>Rok narození</th>
+                  <th>Ulice</th>
+                  <th>Město</th>
+                  <th>PSČ</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in klienti %}
+                  <tr>
+                    <td>{{ i.first_name }}</td>
+                    <td>{{ i.last_name }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.phone_number }}</td>
+                    <td>{{ i.birth_year }}</td>
+                    <td>{{ i.street }}</td>
+                    <td>{{ i.city }}</td>
+                    <td>{{ i.postal_code }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <a href="{{url_for('inside_bp.seznam_klientu')}}" class="btn btn-outline-secondary" role="button">Celý seznam</a>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header text-center">
+          <h4>Seznam pojištění</h4>
+        </div>
+        <div class="card-body">
+          <table class="table table-striped table-hover">
+              <thead>
+                  <tr>
+                      <th>Druh</th>
+                      <th>Pojišťovna</th>
+                      <th>pojistna castka</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for i in pojisteni %}
+                      <tr>
+                          <td>{{ i.druh }}</td>
+                          <td>{{ i.pojistovna }}</td>
+                          <td>{{ i.pojistna_castka }}</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+          <a href="{{url_for('inside_bp.seznam_pojisteni')}}" class="btn btn-outline-secondary" role="button">Celý seznam</a>
+        </div>
+      </div>
+    </div>
+    
+    <!--prava cast kontejneru-->
+    <div class="col-md-3 mt-3">
+      <div class="card">
+      
+        <div class="card-header text-center">
+          <h4>Nápověda</h4>
+        </div>
+          <div class="card-body">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Vytvořte pojištění
+                  </button>
+                
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                  <div class="accordion-body">
+                    <strong>Pokud vkládáte nového pojištění</strong> vyplňte formulář a po jeho úspěšném uložení do databáze můžete klientovi nové pojištění přidat. Druhým způsobem jak vytvořit pojištěného klienta je vytvořit nejdříve pojištění a následně ho přiřadit k již vytvořenému klientovi nebo klienta následně vytvořit. Vytvořená pojištění bez klientů nebo vytvořené klienty bez pojištění najdete v rejtříku zobrazit. Pro jednoho klienta samozřejmě můžete přidat více pojištění.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Cizinec
+                  </button>
+                
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Věk klienta
+                  
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block inside_content %}
+{% endblock %}

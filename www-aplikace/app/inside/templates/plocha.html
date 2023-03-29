@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-3">
+        <div class="card text-center">
+          <div class="card-header">
+
+            <div class="row">
+              <div class="col-sm-4 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <img class="mb-4" src="../../static/img/add.svg" alt="" width="100" height="100">
+                    <h5 class="card-title">Celkem evidovaných klientů:</h5>
+                    <p class="card-text card-text fs-1">{{ klienti_suma }}</p>
+                    <hr>
+                    <p>Počet všech klientů kteří jsou evidováni</p>
+                    <a href="{{url_for('inside_bp.seznam_klientu')}}" class="btn btn-primary" role="button">Celý seznam</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <img class="mb-4" src="../../static/img/database.svg" alt="" width="100" height="100">
+                    <h5 class="card-title">Celkem evidovaných pojištění</h5>
+                    <p class="card-text card-text fs-1">{{ pojisteni_suma }}</p>
+                    <hr>
+                    <p>Počet všech pojištění která jsou evidována</p>
+                    <a href="{{url_for('inside_bp.seznam_pojisteni')}}" class="btn btn-primary" role="button">Celý seznam</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <img class="mb-4" src="../../static/img/bell.svg" alt="" width="100" height="100">
+                    <h5 class="card-title">Pojištěný klient</h5>
+                    <p class="card-text fs-1">{{ klient_pojisteny }}</p>
+                    <hr>
+                    <p>Tuto kategorii obsazují pouze pojištění klienti. Tedy všichni kteří mají alespoň jedno pojištění.</p>
+                    <a href="#" class="btn btn-primary">Zobrazit</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12 mt-3">
+        <div class="card text-center">
+          <div class="card-header">
+
+            <div class="row">
+              <div class="col-sm-4 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <img class="mb-4" src="../../static/img/pojistka_bez_klienta.svg" alt="" width="100" height="100">
+                    <h5 class="card-title">Počet pojistek bez klienta:</h5>
+                    <p class="card-text card-text fs-1">{{ pojistky }}</p>
+                    <hr>
+                    <p>Počet všech pojistek které nemají dosud žádného pojistníka</p>
+                    <a href="#" class="btn btn-primary">Zobrazit</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <img class="mb-4" src="../../static/img/bookmark.svg" alt="" width="100" height="100">
+                    <h5 class="card-title">Pojištěný klient</h5>
+                    <p class="card-text fs-1">{{ klient_pojisteny }}</p>
+                    <hr>
+                    <p>Tuto kategorii obsazují pouze pojištění klienti. Tedy všichni kteří mají alespoň jedno pojištění.</p>
+                    <a href="#" class="btn btn-primary">Zobrazit</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 mt-3">
+                <div class="card">
+                  <div class="card-body">
+                    <img class="mb-4" src="../../static/img/house-check-fill.svg" alt="" width="100" height="100">
+                    <h5 class="card-title">Pojištěný klient</h5>
+                    <p class="card-text fs-1">{{ klient_pojisteny }}</p>
+                    <hr>
+                    <p>Tuto kategorii obsazují pouze pojištění klienti. Tedy všichni kteří mají alespoň jedno pojištění.</p>
+                    <a href="#" class="btn btn-primary">Zobrazit</a>
+                  </div>
+                </div>
+              </div>
+
+            
+{% endblock %}
+
+{% block inside_content %}
+{% endblock %}
